@@ -363,24 +363,6 @@ Set root password:
 passwd
 ```
 
-## Initial ramdisk
-
-- https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_mkinitcpio
-- https://wiki.archlinux.org/index.php/Mkinitcpio
-
-The `HOOKS` line might need to be updated in `/etc/mkinitcpio.conf` depending on the disk method you used:
-
-- Method 1: nothing to change
-- Method 2: `base systemd udev autodetect modconf block sd-lvm2 filesystems keyboard fsck`
-- Method 3: `base systemd udev autodetect keyboard sd-vconsole modconf block sd-encrypt filesystems fsck`
-- Method 4: `base systemd udev autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 filesystems fsck`
-
-Generate the ramdisks using the presets:
-
-```sh
-mkinitcpio -P
-```
-
 ## Bootloader: systemd-boot
 
 - https://wiki.archlinux.org/index.php/Systemd-boot
@@ -481,9 +463,9 @@ pacman -S xorg-server
 pacman -S xf86-video-intel
 ```
 
-## Desktop environment: Plasma and KDE
+## Desktop environment: i3
 
-- https://wiki.archlinux.org/index.php/KDE
+- https://i3wm.org/docs/userguide.html
 
 ```sh
 pacman -S plasma
@@ -555,3 +537,30 @@ systemctl start vmtoolsd
 ## Now what?
 
 See https://wiki.archlinux.org/index.php/General_recommendations
+
+## PDF readers
+
+Extremly light-weight, Vim-keys like configuration:
+Zathura
+
+Relatively light:
+Evolution
+
+With good UI and editing:
+Master PDF Editor 
+
+## Mail
+
+Mailspring
+
+## File Manager
+
+Nautilus
+
+## Bluetooth
+
+https://wiki.archlinux.org/index.php/Bluetooth
+
+## Image Viwer
+
+Vimiv
